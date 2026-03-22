@@ -1,4 +1,4 @@
-FROM golang:1.17.5-stretch AS build
+FROM golang:1.17.5-bullseye AS build
 
 COPY src/ /src
 WORKDIR /src
@@ -14,4 +14,3 @@ COPY --from=build /src/server/templates /app/server/templates/
 RUN apt update && apt install g++ -y
 
 CMD ["./resoccessor"]
-

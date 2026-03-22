@@ -13,5 +13,5 @@ services:
     stop_grace_period: 1s
 
   redis:
-    image: 'cr.yandex/crpogk7287k25tqmrogj/redis:6.2.6-alpine'
+    image: 'redis:6.2.6-alpine'
     restart: always
