@@ -1,0 +1,17 @@
+services:
+  ctfland:
+    name: CTFLand
+    checker:
+      basedir: ./checkers/ctfland
+      script: ./checker.py
+      setup: python3 -m pip install --break-system-packages -r requirements.txt
+    vuln:
+      basedir: ./services/ctfland
+  resoccessor:
+    name: Resoccessor
+    checker:
+      basedir: ./checkers/resoccessor
+      script: ./checker.py
+      setup: python3 -m pip install --break-system-packages -r requirements.txt
+    vuln:
+      basedir: ./services/resoccessor
