@@ -1,4 +1,4 @@
-FROM openjdk:16
+FROM eclipse-temurin:17-jre
 EXPOSE 8080
 RUN mkdir /app
 COPY ./ATM.jar /app/ATM.jar

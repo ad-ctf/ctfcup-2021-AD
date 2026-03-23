@@ -1,4 +1,12 @@
 services:
+  atm-machine:
+    name: ATM Machine
+    checker:
+      basedir: ./checkers/ATM-machine
+      script: ./checker.py
+      setup: python3 -m pip install --break-system-packages -r requirements.txt
+    vuln:
+      basedir: ./services/ATM-machine
   ctfland:
     name: CTFLand
     checker:
