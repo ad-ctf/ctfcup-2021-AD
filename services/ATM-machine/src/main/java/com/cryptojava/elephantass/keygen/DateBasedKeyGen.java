@@ -40,6 +40,11 @@ public class DateBasedKeyGen implements AesKeyGen {
         private Instant generateDateBetween(Instant startInclusive, Instant endExclusive) {
             long startSeconds = startInclusive.getEpochSecond();
             long endSeconds = endExclusive.getEpochSecond();
+            if (startSeconds >= endSeconds) {
+                long tmp = startSeconds;
+                startSeconds = endSeconds;
+                endSeconds = tmp + 1;
+            }
             long random = ThreadLocalRandom
                     .current()
                     .nextLong(startSeconds, endSeconds);
